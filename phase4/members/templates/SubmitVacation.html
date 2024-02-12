@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+        <link href="{% static 'css/submitVacation.css' %}" rel = "stylesheet">
+        <title>Submit Vacation</title>
+</head>
+
+<body>
+    <header>
+        <button onclick="window.history.back()" class="back"> <i class="fa-sharp fa-solid fa-circle-arrow-left"></i>
+        </button>
+        <img class="logoImg" src="{% static 'LOGO.png' %}" >
+        <a href="#" class="logo">Human Resources</a>
+        <nav class="navigation">
+            <a href="#contact us">Contact us</a>
+        </nav>
+        <a href="{% url 'Projects' %}" class="lgOut"> Log out <i class="fa-solid fa-right-from-bracket"></i></a>
+    </header>
+        <div class = "vacation-pos">
+            <p class = "vacation text">Vacation Form</p>
+        </div>
+        <div class = "texts">
+            <div class = "image-contain first">
+                <img src = "{% static 'user.png' %}" class = "user-image">
+            </div>
+            <div class = "duration-container">
+                <label class = "form-label">From</label>
+                <input type = "date" class = "text-vacation" placeholder="From" id = "from" value="{{ x.From }}">
+            </div>
+            <div class = "duration-container">
+                <label class = "form-label">To</label>
+                <input type = "date" class = "text-vacation" placeholder="To" id = "to" value="{{ x.To }}">
+            </div>
+            <div class="duration-container">
+                <label class = "form-label">Employee ID</label>
+                <input type="text" class="text-vacation input" placeholder="id" id="employee-id" value="{{ x.employee_id_id }}">
+            </div>
+            <textarea resize = "none" class = "text-area" placeholder="Reason" id = "reason" value="{{ .reason}}"></textarea>
+            <div class = "accept-btn-contains end">
+                <label class = "disabled" id = "warn-message"></label>
+                <p class = "accept-message"></p>
+                <input class = "accept-btn" type="button" value = "Submit" id ="accept-btn">
+
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2023 HR-Website. All rights reserved.</p>
+            <nav>
+                <a href="{% url 'Projects' %}">Home</a>
+                <a href="{% url 'Main' %}">HR main page</a>
+                <a href="{% url 'Register' %}">Add New Employee</a>
+                <a href="{% url 'searchEmployee' %}">Search Employee</a>
+                <a href="{% url 'allEmployees' %}">View All Employees</a>
+                <a href="{% url 'allVacations' %}">View All Vacations</a>
+                <a href="{% url 'allEmployees' %}">Update Employee</a>
+                <a href="{% url 'allEmployees' %}">Delete Employee</a>
+                <a href="{% url 'allEmployees' %}">Submit Vacation </a>
+                <a href="#">Help</a>
+                <a href="#contact-us">Contact Us</a>
+            </nav>
+        </footer>
+        <script src="{% static 'js/SubmitVacation.js' %}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</body>
+
+</html>
+

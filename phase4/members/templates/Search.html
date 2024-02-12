@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <link href="{% static 'css/Search.css' %}" rel = "stylesheet">
+  <title>HR-Website</title>
+  <script src="{% static 'js/Search.js' %}"></script>
+
+</head>
+<body>
+
+<header>
+  <button onclick="window.history.back()" class="back"><i class="fa-sharp fa-solid fa-circle-arrow-left"></i></button>
+  <img class="logoImg" src="{% static 'LOGO.png' %}" >
+  <a href="#" class="logo">Human Resources</a>
+  <nav class="navigation">
+    <a href="#contact us">Contact us</a>
+  </nav>
+  <a href="{% url 'Projects' %}" class="lgOut"> Log out <i class="fa-solid fa-right-from-bracket"></i></a>
+</header>
+
+<h1>Employee Search</h1>
+<div>
+  <form action="{% url 'searchResult' %}" method="get">
+    <label for="record_id">Enter Record ID:</label>
+    <input type="text" name="record_id" required>
+    <button type="submit">Search</button>
+  </form>
+</div>
+  
+</form>
+</div>
+<footer>
+  <p>&copy; 2023 HR-Website. All rights reserved.</p>
+  <nav>
+      <a href="{% url 'Projects' %}">Home</a>
+      <a href="{% url 'Main' %}">HR main page</a>
+      <a href="{% url 'Register' %}">Add New Employee</a>
+      <a href="{% url 'searchEmployee' %}">Search Employee</a>
+      <a href="{% url 'allEmployees' %}">View All Employees</a>
+      <a href="{% url 'allVacations' %}">View All Vacations</a>
+      <a href="{% url 'allEmployees' %}">Update Employee</a>
+      <a href="{% url 'allEmployees' %}">Delete Employee</a>
+      <a href="{% url 'allEmployees' %}">Submit Vacation </a>
+      <a href="#">Help</a>
+      <a href="#contact-us">Contact Us</a>
+  </nav>
+</footer>
+</body>
+</html>>

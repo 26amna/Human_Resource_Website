@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/Home.css' %}" rel = "stylesheet">
+    <script src="{% static 'js/home.js' %}"></script>
+    <title>All Projects</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Projects Page </h1>
+    </header>
+    <div class="container">
+        <a href="{% url 'Main' %}" class="anchor-style card" onclick="showMessage('Human Resources Website')">
+            <p class="text-in-card">
+                Human Resources Website
+            </p>
+        </a>
+        <div class="card" onclick="showMessage('Student Affairs Website')">
+            <p class="text-in-card">
+                Student Affairs Website
+            </p>
+        </div>
+        <div class="card" onclick="showMessage('Higher studies Website')">
+            <p class="text-in-card">
+                Higher studies Website
+            </p>
+        </div>
+        <div class="card" onclick="showMessage('Laboratory tracking website')">
+            <p class="text-in-card">
+                Laboratory tracking website
+            </p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 All Systems. All rights reserved.</p>
+        <nav>
+            <a href="{% url 'Projects' %}">Home</a>
+            <a href="#contact-us">Contact Us</a>
+            <a href="#">Help</a>
+            
+        </nav>
+    </footer>
+</body>
+</html>
